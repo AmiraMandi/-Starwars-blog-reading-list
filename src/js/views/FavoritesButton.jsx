@@ -18,11 +18,11 @@ export const FavoritesButton = () => {
         {myFavorites.length === 0 ? (
             <li><span className="dropdown-item">No favorites selected</span></li>
         ) : (
-          myFavorites.map((item) => (
-            <li key={item.id} className="d-flex align-items-center">
+          myFavorites.map((item,i) => (
+            <li key={i} className="d-flex align-items-center">
               <span className="dropdown-item">{item.name} - {item.type}</span>
               <button type="button" className="btn btn-outline-danger"
-                onClick={() => actions.removeFavorite(item, myFavorites)}>
+                onClick={() => actions.removeFavorite(item)}>
                 <i className="fa fa-trash"></i>
               </button>
             </li>
